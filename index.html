@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>I Love you❤️</title>
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    height: 100vh;
+    background: radial-gradient(circle at top, #ff5f9e, #1a001f);
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Hearts */
+.heart {
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    background: #ff4d6d;
+    transform: rotate(45deg);
+    animation: float 6s linear infinite;
+    opacity: 0.8;
+}
+.heart::before,
+.heart::after {
+    content: '';
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    background: #ff4d6d;
+    border-radius: 50%;
+}
+.heart::before { top: -10px; left: 0; }
+.heart::after { left: -10px; top: 0; }
+
+@keyframes float {
+    0% { transform: translateY(0) rotate(45deg) scale(0.6); opacity: 0; }
+    20% { opacity: 1; }
+    100% { transform: translateY(-120vh) rotate(45deg) scale(1.2); opacity: 0; }
+}
+
+/* Card */
+.card {
+    background: rgba(255,255,255,0.15);
+    backdrop-filter: blur(12px);
+    border-radius: 20px;
+    padding: 50px 70px;
+    text-align: center;
+    box-shadow: 0 0 40px rgba(255,0,100,0.5);
+    animation: popIn 1.2s ease forwards;
+    transform: scale(0.6);
+    z-index: 2;
+    max-width: 600px;
+}
+
+@keyframes popIn {
+    to { transform: scale(1); }
+}
+
+.card h1 {
+    font-size: 3.5rem;
+    color: #fff;
+    animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+    0%,100% { transform: scale(1); }
+    50% { transform: scale(1.08); }
+}
+
+/* Message text */
+.message {
+    margin-top: 25px;
+    font-size: 1.2rem;
+    line-height: 1.7;
+    color: #ffe6f0;
+    white-space: pre-line;
+    opacity: 0;
+    animation: fadeIn 2.5s ease forwards;
+    animation-delay: 1.2s;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+</style>
+</head>
+<body>
+
+<div class="card">
+    <h1>I am Sorry</h1>
+
+    <div class="message">
+Nothing here is meant to make you feel guilty I just want to say I am genuinely sorry for my behaviour I know aapko bohot bura laga hoga and
+I promise I will not repeat this again and I’ll try to be better for you
+Periods ke beech main maine aap par pressure create kiya uske liye bhi I’m really sorry yr
+Aage se I’ll be more patient more considerate aur aapko aur acche se samajhne ki koshish karunga aur har baat me overreact nahi kiya karunga instead of try to solve your problems i will hear them more and make you feel heard and treat you more gently
+Agar meri kisi aur baat ya action se bhi aapko bura laga ho toh uske liye bhi i am so sorry 
+Mai aapko unnecessarily pareshan nahi karunga and I will improve
+I’m sorry for everything forgive me unnati I love you so much baby❤️
+
+-Just read it no replies-
+    </div>
+</div>
+
+<script>
+function createHeart() {
+    const heart = document.createElement('div');
+    heart.className = 'heart';
+    heart.style.left = Math.random() * 100 + 'vw';
+    heart.style.animationDuration = (4 + Math.random() * 4) + 's';
+    document.body.appendChild(heart);
+    setTimeout(() => heart.remove(), 8000);
+}
+setInterval(createHeart, 300);
+</script>
+
+</body>
+</html>
